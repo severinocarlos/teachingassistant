@@ -4,7 +4,7 @@ var taserver = express();
 
 var alunos = [{nome:'Paulo',cpf:'683',email:'phmb@cin.br',metas:{'requisitos':'MA'}},{nome:'Mariana',cpf:'456',email:'@mcb@cin.br',metas:{'requisitos':'MPA'}}];
 
-taserver.get('/', function (req, res) {
+taserver.get('/', function (req: any, res: { send: (arg0: { nome: string; cpf: string; email: string; metas: { requisitos: string; }; }[]) => void; }) {
   res.send(alunos);
 })
 
