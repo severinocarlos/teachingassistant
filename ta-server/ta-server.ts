@@ -10,7 +10,7 @@ var alunos: CadastroDeAlunos = new CadastroDeAlunos();
 
 taserver.use(bodyParser.json());
 
-taserver.get('/alunos', function (req, res) {
+taserver.get('/alunos', function (req: express.Request, res: express.Response) {
   var aluno: string = JSON.stringify(alunos.getAlunos());
   res.send(aluno);
 })
@@ -35,6 +35,6 @@ taserver.put('/aluno', function (req: express.Request, res: express.Response) {
   }
 })
 
-taserver.listen(3000, function () {
-  console.log('Example app listening on port 3000!')
+taserver.listen(3000, () => {
+  console.log('Example app listening on port 3000!');
 })
